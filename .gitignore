@@ -1,0 +1,57 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+env/
+*.env/
+*.venv/
+
+# pipenv
+Pipfile.lock
+
+# Poetry
+poetry.lock
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VS Code settings
+.vscode/
+
+# macOS
+.DS_Store
+
+# Test and coverage reports
+htmlcov/
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Logs
+*.log
+
+# Script outputs
+*.out
+*.bak
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# dotenv environment files
+.env
+.env
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+/Facebook_pages
