@@ -2,13 +2,23 @@ import os
 from urllib.parse import quote_plus
 
 # === MongoDB ===
-USERNAME = os.getenv("MONGO_USER", "your_username")
-PASSWORD = quote_plus(os.getenv("MONGO_PASS", "your_password"))
-CLUSTER  = os.getenv("MONGO_CLUSTER", "cluster1.c4idkzi.mongodb.net")
+
 DB_NAME  = os.getenv("MONGO_DB", "test")
 
 
-MONGO_URI = f"mongodb+srv://{USERNAME}:{PASSWORD}@{CLUSTER}/"
+DB_NAME = os.getenv("MONGO_DB", "test")
+
+def _build_uri_from_credentials() -> str:
+    """Fallback connection string derived from discrete credentials."""
+
+    username = os.getenv("MONGO_USER", "your_username")
+    password = quote_plus(os.getenv("MONGO_PASS", "your_password"))
+    cluster = os.getenv("MONGO_CLUSTER", "cluster1.c4idkzi.mongodb.net")
+
+    return f"mongodb+srv://{username}:{quote_plus(password)}@cluster1.c4idkzi.mongodb.net/"
+
+
+MONGO_URI = os.getenv("MONGO_URI") or _build_uri_from_credentials()
 
 
 INPUT_COLLECTION  = "batch_aa"

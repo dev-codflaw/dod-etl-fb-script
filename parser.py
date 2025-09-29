@@ -8,7 +8,7 @@ from parsel import Selector
 from utils import c_replace, clean_url
 
 
-def parse_profile(html_response: str, idd: str, input_url: str, html_file_path: str):
+def parse_html(html_response: str, idd: str, input_url: str, html_file_path: str):
     """
     Parse Facebook profile/page HTML and extract structured info.
     Returns a dict ready to insert into MongoDB, or None if parsing fails.
